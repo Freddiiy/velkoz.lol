@@ -1,5 +1,4 @@
-import {TSummoner} from "@/server/routers/lol/summonerRouter";
-import {TMatch, TMatches} from "@/server/routers/lol/matchRouter";
+import {TMatch} from "@/server/routers/lol/matchRouter";
 import {calcChampFreq, calcChampWinRate, calcKDA, calcWinRate} from "@/utils/calcMatchInfo";
 import ChampImg from "@/components/LeagueIcons/ChampImg";
 import {useContext} from "react";
