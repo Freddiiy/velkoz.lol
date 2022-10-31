@@ -4,7 +4,7 @@ import ChampImg from "@/components/LeagueIcons/ChampImg";
 import {useContext} from "react";
 import SummonerContext from "@/views/lol/summoner/SummonerContext";
 import MatchesContext from "@/views/lol/summoner/MatchesContext";
-import Match from "./Match";
+import Match from "@/views/lol/summoner/Match";
 
 const MatchHistory = () => {
 	const summoner = useContext(SummonerContext);
