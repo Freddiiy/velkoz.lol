@@ -26,7 +26,7 @@ const MatchHistory = () => {
 			<div className={"w-full flex flex-col"}>
 				<div className={"bg-brand-500 mb-2 rounded-xl"}>
 					<div
-						className={"flex flex-row justify-between items-center px-7 py-2"}
+						className={"flex flex-row justify-between items-center px-7 py-5"}
 					>
 						<div className={"inline-block"}>
 							<p>Last {times} games</p>

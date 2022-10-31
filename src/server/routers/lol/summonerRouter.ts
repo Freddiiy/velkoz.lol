@@ -5,6 +5,7 @@ import {ISummoner} from "@/utils/@types/summoner.t";
 import {riotRequest} from "@/server/data/riot/riotRequest";
 import {inferProcedureOutput} from "@trpc/server";
 import {AppRouter} from "@/server/routers/_app";
+import {ISummonerRank} from "@/utils/@types/lol/summoner";
 
 //TODO: add update mutation.
 
@@ -88,7 +89,18 @@ export const summonerRouter = router({
 				},
 			});
 		}),
+	rank: publicProcedure
+		.input(
+			z.object({
+				encryptedSummonerId: z.string(),
+				region: z.string(),
+			}),
+		)
+		.query(async({input}) => {
+			const url = `https://${input.region}.api.riotgames.com/lol/league/v4/entries/by-summoner/${input.encryptedSummonerId}`;
+			const summonerRank = await riotRequest<ISummonerRank>(url);
 
+		}),
 	update: publicProcedure
 		.input(
 			z.object({

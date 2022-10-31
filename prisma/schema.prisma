@@ -25,6 +25,22 @@ model Summoner {
   lastUpdated   DateTime @updatedAt
 }
 
+model SummonerRank {
+    id  String @id @unique @default(uuid())
+    leagueId String @unique
+    queueType String
+    rank String
+    summonerId String @unique
+    summonerName String
+    leaguePoints Int
+    wins Int
+    losses Int
+    veteran Boolean
+    inactive Boolean
+    freshBlood Boolean
+    hotStreak Boolean
+}
+
 //Match table
 model Match {
   id         String       @id @unique @default(uuid())

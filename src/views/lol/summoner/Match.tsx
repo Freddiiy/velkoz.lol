@@ -14,7 +14,7 @@ import SumSpellIcon from "@/components/LeagueIcons/SumSpellIcon";
 import {calcKDA} from "@/utils/calcMatchInfo";
 import ItemIcon from "@/components/LeagueIcons/ItemIcon";
 
-const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | null }) => {
+const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | undefined }) => {
 	const champContext = useContext(ChampionContext);
 	if (!match || !match.info || !match.metaData || !summoner)
 		return <div>Loading...</div>;

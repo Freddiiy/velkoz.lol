@@ -17,7 +17,7 @@ const SummonerHeader = ({
 	const version = useContext(VersionContext);
 	const date = new Date(summoner ? summoner.lastUpdated : Date.now());
 	const lastUpdated = formatTime(date.getTime());
-	const scrolled = useScrollDistance(150);
+	const scrolled = useScrollDistance(190);
 
 	return (
 		<>
