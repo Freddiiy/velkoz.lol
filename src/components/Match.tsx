@@ -1,22 +1,23 @@
-import Link from "next/link";
 import {useEffect, useState} from "react";
-import {IMatch, Participant} from "reksai/src/@types/match";
+import {Participant} from "reksai/src/@types/match";
 import {ISummoner} from "reksai/src/@types/summoner";
 import axios from "axios";
-import {Runes} from "../utils/@types/runes.t";
-import {Spell} from "../utils/@types/spell.t"
+import {Runes} from "@/utils/@types/runes.t";
+import {Spell} from "@/utils/@types/spell.t"
 import Image from "next/image";
 import {useRouter} from "next/router";
 import { Tooltip } from '@nextui-org/react';
 import {IItem, ItemsResponse} from "reksai/src/@types/items";
 import useSWR from "swr";
+import {TSummoner} from "@/server/routers/lol/summonerRouter";
+import {TMatch} from "@/server/routers/lol/matchRouter";
 
 /*
 * Name: Mikkel Bentsen
 * Date: 14/9-2022
 */
 
-const Match = ({match, summoner} : {match: IMatch, summoner: ISummoner}) => {
+const Match = ({match, summoner} : {match: TMatch, summoner: TSummoner}) => {
     const router = useRouter()
     /*useStake for match state*/
     const [matchWon, setMatchWon] = useState<boolean>()
