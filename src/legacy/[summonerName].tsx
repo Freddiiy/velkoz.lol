@@ -1,5 +1,5 @@
 import Image from "next/future/image";
-import Match from "../components/Match";
+import Match from "./Match";
 import {motion} from "framer-motion";
 import axios from "axios";
 import {ISummoner} from "reksai/src/@types/summoner";
