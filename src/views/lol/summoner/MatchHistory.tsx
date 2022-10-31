@@ -55,7 +55,7 @@ const MatchHistory = () => {
 				</div>
 				<div className={"rounded-xl bg-brand-500 overflow-auto"}>
 					{sortedMatches.map((match) => (
-						<Mach key={match.matchId} match={match} summoner={summoner}/>
+						<Match key={match.matchId} match={match} summoner={summoner}/>
 					))}
 				</div>
 			</div>
