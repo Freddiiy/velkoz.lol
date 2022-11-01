@@ -3,13 +3,14 @@ import LeagueHoverIcon from "@/components/LeagueHoverIcon";
 import {LeagueIcon} from "@/components/LeagueHoverIcon/LeagueIcon";
 import {RiCopperCoinLine} from "react-icons/ri";
 import {ReactNode} from "react";
+type SizeProps = "xs" | "sm" | "md" | "lg" | "xl"
 
-const ItemIcon = ({itemId}: { itemId: number | undefined }) => {
+const ItemIcon = ({itemId, size = "md"}: { itemId: number | undefined, size?: SizeProps }) => {
 	const item = useItem(itemId);
 	const isMythic = item?.description.includes("rarityMythic");
 	return (
 		<MythicWrapper isMythic={isMythic}>
-			<LeagueHoverIcon img={item?.image.full}>
+			<LeagueHoverIcon img={item?.image.full} size={size}>
 				{item && (
 					<>
 						<div className={"flex flex-row max-w-sm"}>

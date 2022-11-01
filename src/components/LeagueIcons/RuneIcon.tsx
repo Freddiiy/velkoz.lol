@@ -2,12 +2,14 @@ import {useRune} from "@/hooks/useRune";
 import LeagueHoverIcon from "@/components/LeagueHoverIcon";
 import {LeagueIcon} from "@/components/LeagueHoverIcon/LeagueIcon";
 
-const RuneIcon = ({keystoneId}: { keystoneId: number | undefined }) => {
+type SizeProps = "xs" | "sm" | "md" | "lg" | "xl"
+
+const RuneIcon = ({keystoneId, size = "lg"}: { keystoneId: number | undefined, size?: SizeProps }) => {
 	const rune = useRune(keystoneId);
 	// Please dont question my typescript shenanigans down there in longDesc.
 	// I check if longDesc is present in rune and if it is not undefined and only then I will show the description.
 	return (
-		<LeagueHoverIcon img={rune?.icon} size={"lg"}>
+		<LeagueHoverIcon img={rune?.icon} size={size}>
 			{rune && (
 
 				<div className={"flex flex-row max-w-sm"}>

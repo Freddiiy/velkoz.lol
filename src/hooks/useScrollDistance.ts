@@ -6,10 +6,9 @@ export const useScrollDistance = (d: number) => {
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			setScrolled(window.scrollY > d);
-		});
+		}, {passive: true});
 
 		return window.removeEventListener("scroll", () => setScrolled(false));
 	}, [d, setScrolled]);
-
 	return scrolled;
 }

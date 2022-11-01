@@ -2,10 +2,12 @@ import {useSummonerSpell} from "@/hooks/useSummonerSpell";
 import LeagueHoverIcon from "@/components/LeagueHoverIcon";
 import {LeagueIcon} from "@/components/LeagueHoverIcon/LeagueIcon";
 
-const SumSpellIcon = ({spellId}: { spellId: number | undefined }) => {
+type SizeProps = "xs" | "sm" | "md" | "lg" | "xl"
+
+const SumSpellIcon = ({spellId, size = "md"}: { spellId: number | undefined, size?: SizeProps }) => {
 	const sumSpell = useSummonerSpell(spellId);
 	return (
-		<LeagueHoverIcon img={sumSpell?.image.full}>
+		<LeagueHoverIcon img={sumSpell?.image.full} size={size}>
 			<div className={"flex flex-row max-w-sm"}>
 				<LeagueIcon img={sumSpell?.image.full} size={"lg"}/>
 				<div className={"flex flex-col pl-4"}>

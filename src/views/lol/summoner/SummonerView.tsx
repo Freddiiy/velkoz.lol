@@ -5,8 +5,6 @@ import {useRouter} from "next/router";
 import {trpc} from "@/utils/trpc";
 import SummonerHeader from "@/views/lol/summoner/SummonerHeader";
 import MatchHistory from "@/views/lol/summoner/MatchHistory";
-import matchesContext from "@/views/lol/summoner/MatchesContext";
-
 
 const SummonerView = () => {
 	const router = useRouter();
@@ -43,11 +41,11 @@ const SummonerView = () => {
 			<MatchesContext.Provider value={matches.data}>
 				<Container>
 					<SummonerHeader handleUpdate={handleUpdate} isLoading={summoner.isLoading}/>
-					<div className={"grid gap-2 grid-cols-4"}>
+					<div className={"grid gap-2 grid-cols-1 md:grid-cols-4"}>
 						<div className={"col-span-1"}>
 							<div className={"bg-brand-500 w-full h-12 rounded-xl"}>
 								<h1>
-									{summoner.data?.id}
+									{summoner.data?.name}
 								</h1>
 							</div>
 						</div>

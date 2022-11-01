@@ -38,7 +38,7 @@ const MatchHistory = () => {
 								champFreq.map((c) => (
 										<div key={c.champId} className={"flex flex-row items-center"}>
 											<ChampImg champId={c.champId} size={"lg"}/>
-											<div className={"mx-3 flex flex-col"}>
+											<div className={"hidden mx-3 md:flex md:flex-col"}>
 												<div className={"inline-flex"}>
 													<p>
 														{calcChampWinRate(c.wins, c.played)}% - {c.wins}W
