@@ -45,7 +45,7 @@ model SummonerRank {
 model Match {
   id         String       @id @unique @default(uuid())
   lastUpdated DateTime    @default(now())
-  matchId    String
+  matchId    String       @unique
   metaData   Metadata?
   info       Info?
 }
@@ -55,7 +55,7 @@ model Metadata {
   id           String               @id @unique @default(uuid())
   game         Match             @relation(fields: [gameId], references: [id], onDelete: Cascade)
   gameId       String               @unique
-  matchId      String
+  matchId      String            @unique
   dataVersion  String
   participants MetaParticipant[]
 }
