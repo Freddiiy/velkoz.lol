@@ -25,6 +25,8 @@ const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | undefin
 	const sumInfo = match.info.participants.find(
 		(e) => e.puuid == summoner?.puuid
 	);
+
+	console.log(sumInfo)
 	const win = sumInfo?.win;
 	const winBorder = win ? "border-blue-400" : "border-red-500";
 	const winText = win ? "text-blue-400" : "text-red-500";
@@ -34,6 +36,8 @@ const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | undefin
 
 	const keyStoneId = sumInfo?.perks?.styles[0].selections[0].perk;
 	const secondRune = sumInfo?.perks?.styles[1].style;
+
+	console.log(keyStoneId)
 
 	const champ = champContext?.find(
 		(c) => parseInt(c.key) == sumInfo?.championId
