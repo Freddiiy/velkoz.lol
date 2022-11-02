@@ -26,6 +26,7 @@ const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | undefin
 		(e) => e.puuid == summoner?.puuid
 	);
 
+	console.log(sumInfo)
 
 	const win = sumInfo?.win;
 	const winBorder = win ? "border-blue-400" : "border-red-500";
@@ -34,7 +35,7 @@ const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | undefin
 	const lane = convertLaneName(sumInfo?.individualPosition ?? "Invalid");
 	const queue = getQueueType(match.info.queueId);
 
-	const keyStoneId = sumInfo?.perks?.styles[0].selections[0].perk;
+	const firstRune = sumInfo?.perks?.styles[0].selections[0].perk;
 	const secondRune = sumInfo?.perks?.styles[1].style;
 
 	const champ = champContext?.find(
@@ -82,7 +83,7 @@ const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | undefin
 								)}
 								<div
 									className={"hidden md:flex md:flex-col items-center pr-1 md:pr-2 gap-0.5 md:gap-1.5"}>
-									<RuneIcon keystoneId={keyStoneId}/>
+									<RuneIcon keystoneId={firstRune}/>
 									<SecRuneIcon keystoneId={secondRune}/>
 								</div>
 								<div className={"hidden md:flex md:flex-col items-center pr-1 md:pr-2 gap-1.5"}>
@@ -90,7 +91,7 @@ const Match = ({match, summoner}: { match: TMatch; summoner: TSummoner | undefin
 									<SumSpellIcon spellId={sumInfo?.summoner2Id} size={"md"}/>
 								</div>
 								<div className={"flex flex-col md:hidden items-center pr-1 md:pr-2 gap-0.5"}>
-									<RuneIcon keystoneId={keyStoneId} size={"md"}/>
+									<RuneIcon keystoneId={firstRune} size={"md"}/>
 									<SecRuneIcon keystoneId={secondRune} size={"xs"}/>
 								</div>
 								<div className={"flex flex-col md:hidden items-center pr-1 md:pr-2 gap-0.5"}>
