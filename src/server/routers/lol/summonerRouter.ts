@@ -22,7 +22,6 @@ export const summonerRouter = router({
 				where: {
 					name: {
 						equals: input.name,
-						mode: "insensitive",
 					},
 					region: input.region,
 				}
@@ -48,7 +47,6 @@ export const summonerRouter = router({
 					where: {
 						name: {
 							equals: input.name,
-							mode: "insensitive",
 						},
 						region: input.region,
 					}
@@ -84,7 +82,6 @@ export const summonerRouter = router({
 				where: {
 					name: {
 						startsWith: input,
-						mode: "insensitive",
 					},
 				},
 			});
